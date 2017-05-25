@@ -6,18 +6,21 @@ import Navbar from './Navbar';
 class App extends Component {
   constructor(props) {
       super(props);
-      this.state = {loggedin: false};
+      this.state = {
+        loggedin: false
+      };
   }
+
   componentWillMount(){
-    let _this = this;
-    firebaseApp.auth().onAuthStateChanged(function(user) {
+    firebaseApp.auth().onAuthStateChanged((user) => {
       if (user) {
-        _this.setState({loggedin: true});
+        this.setState({loggedin: true});
       } else {
-        _this.setState({loggedin: false});
+        this.setState({loggedin: false});
       }
     });
   }
+
   render() {
     return (
       <div className="App">
