@@ -1,28 +1,18 @@
 import React, { Component } from 'react';
-import { Link, browserHistory } from 'react-router'
-import firebaseApp from '../firebase/Firebase';
+import { Link } from 'react-router'
+
 
 class Navbar extends Component {
-  constructor(props) {
-      super(props);
+  
 
-      this.signout = this.signout.bind(this);
-  }
 
-  signout(){
-    firebaseApp.auth().signOut().then(function() {
-      console.log("signed out");
-      browserHistory.push('/login');
-    }, function(error) {
-      console.log("signouterror");
-    });
-  }
+
 
   render() {
-    var loginButton;
-    var signup;
+    let loginButton;
+    let signup;
     if (this.props.loggedin) {
-      loginButton = <button className="btn" onClick={this.signout}>Logout</button>;
+      loginButton = <button className="btn" onClick={this.props.determinedlog}>Logout</button>;
       signup = "";
     } else {
       loginButton = <Link to="/login"><button className="btn">login</button></Link>;

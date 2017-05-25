@@ -1,4 +1,5 @@
 import * as firebase from 'firebase';
+import { browserHistory } from 'react-router'
 
 const config = {
    apiKey: "AIzaSyAkqJ_VGB8PCVT-CEl8KXxh3TEkVV8iG-M",
@@ -10,3 +11,12 @@ const config = {
   };
 
 export const firebaseApp  = firebase.initializeApp(config);
+
+export const signout = () => {
+  firebaseApp.auth().signOut().then(function() {
+    console.log("signed out");
+    browserHistory.push('/login');
+  }, function(error) {
+    console.log("signouterror");
+  });
+}
