@@ -20,3 +20,14 @@ export const signout = () => {
     console.log("signouterror");
   });
 }
+
+export const handleGoogle = (e) => {
+ e.preventDefault();
+ var provider = new firebase.auth.GoogleAuthProvider();
+ firebaseApp.auth().signInWithPopup(provider).then(function(result) {
+   console.log('Google login success')
+ }).catch(function(error) {
+   var errorMessage = error.message;
+   alert("Google error "+ errorMessage);
+ });
+}
