@@ -24,9 +24,9 @@ export const signout = () => {
 export const handleGoogle = (e) => {
  e.preventDefault();
  var provider = new firebase.auth.GoogleAuthProvider();
- firebaseApp.auth().signInWithPopup(provider).then(function(result) {
+ firebaseApp.auth().signInWithPopup(provider).then((result) => {
    console.log('Google login success')
- }).catch(function(error) {
+ }).catch((error) => {
    var errorMessage = error.message;
    alert("Google error "+ errorMessage);
  });
