@@ -8,6 +8,7 @@ class Navbar extends Component {
 
       this.signout = this.signout.bind(this);
   }
+
   signout(){
     firebaseApp.auth().signOut().then(function() {
       console.log("signed out");
@@ -16,6 +17,7 @@ class Navbar extends Component {
       console.log("signouterror");
     });
   }
+  
   render() {
     var loginButton;
     var signup;
