@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import firebaseApp from './firebase/Firebase';
 import Navbar from './Navbar';
-import Home from './Home';
 
 
 class App extends Component {
@@ -26,8 +25,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar loggedin={this.state.loggedin} />
-        <Home />
-
+        {this.props.children}
       </div>
     );
   }
