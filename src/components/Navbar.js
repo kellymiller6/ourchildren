@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, browserHistory } from 'react-router'
-import firebaseApp from './firebase/Firebase';
+import firebaseApp from '../firebase/Firebase';
 
 class Navbar extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Navbar extends Component {
       console.log("signouterror");
     });
   }
-  
+
   render() {
     var loginButton;
     var signup;
