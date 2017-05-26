@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { firebaseApp, signout } from '../firebase/Firebase';
 import Navbar from './Navbar';
-
+import '../styles/app.css'
 
 class App extends Component {
   constructor(props) {
