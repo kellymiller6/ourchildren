@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ref } from '../../firebase/Firebase';
 
 export default class AddWorker extends Component {
   constructor (){
@@ -13,10 +14,9 @@ export default class AddWorker extends Component {
 
   handleSubmit(e) {
   e.preventDefault();
-  //add to data base
-  }
-
-
+  const usersRef = ref.child("users");
+  usersRef.set(this.state);
+ }
 
   render(){
     return(

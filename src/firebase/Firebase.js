@@ -12,6 +12,8 @@ const config = {
 
 export const firebaseApp  = firebase.initializeApp(config);
 
+export const ref = firebaseApp.database().ref()
+
 export const signout = () => {
   firebaseApp.auth().signOut().then(function() {
     console.log("signed out");

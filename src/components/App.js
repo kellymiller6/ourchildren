@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { firebaseApp, signout } from '../firebase/Firebase';
+import { firebaseApp, signout} from '../firebase/Firebase';
 import Navbar from './Navbar';
 import '../styles/app.css'
 
@@ -24,7 +24,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar loggedin={this.state.loggedin} determinedlog={signout}/>
+        <Navbar loggedin={this.state.loggedin} determinedlog={signout} />
         {this.props.children}
       </div>
     );
