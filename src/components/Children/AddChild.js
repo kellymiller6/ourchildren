@@ -8,7 +8,7 @@ export default class AddChild extends Component {
       childName: '',
       childBirthday:'',
       childArrivalDate:'',
-      childInsurance:''
+      childInsurance:'',
     }
   }
 
@@ -23,6 +23,7 @@ export default class AddChild extends Component {
 
   const usersRef = ref.child('users/'+uid+'/child' );
   usersRef.push(this.state);
+
  }
 
 
@@ -39,14 +40,14 @@ export default class AddChild extends Component {
           />
           <input type='text'
                   value={this.state.childBirthday}
-                  placeholder='Number'
+                  placeholder='Birthday'
                   onChange={(e) => this.setState({
                     childBirthday: e.target.value
                   })}
           />
           <input type='text'
                   value={this.state.childArrivalDate}
-                  placeholder='email'
+                  placeholder='Arrival Date'
                   onChange={(e) => this.setState({
                     childArrivalDate: e.target.value
                   })}

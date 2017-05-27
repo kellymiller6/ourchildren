@@ -18,6 +18,7 @@ class ChildrenPage extends Component {
       uid = user.uid;
     }
     ref.child('users/'+uid+'/child').on('value', snapshot => {
+      console.log('cs', snapshot.val())
         this.setState({children: snapshot.val()});
       });
   }
@@ -26,7 +27,17 @@ class ChildrenPage extends Component {
     return (
         <div className="ChildrenPage">
           <h4>All children will go here</h4>
-          {console.log(this.state.children)}
+          {
+            Object.keys(this.state.children).map((child, index) =>{
+            return (
+              <div>
+                <p>{this.state.children[child].childName}</p>
+                <p>{this.state.children[child].childBirthday}</p>
+                <p>{this.state.children[child].childArrivalDate}</p>
+                <p>{this.state.children[child].childInsurance}</p>
+              </div>
+            );
+          })}
           <Link to="/addchild"><button className="btn">Add Child</button></Link>
         </div>
       );
