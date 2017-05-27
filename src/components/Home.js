@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import quotes from '../../quotes/quotes.json'
 
+//randomized quotes will appear on this page along with links to parent profile/children/calendar
 class Home extends Component {
   render() {
     return (
