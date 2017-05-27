@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-export default class AddWorker extends Component {
+export default class AddChild extends Component {
   constructor (){
     super()
     this.state = {
-      workerName: '',
-      workerNumber:'',
-      workerEmail:'',
-      workerType:''
+      childName: '',
+      childBirthday:'',
+      childArrivalDate:'',
+      childInsurance:''
     }
   }
 
@@ -20,41 +20,41 @@ export default class AddWorker extends Component {
 
   render(){
     return(
-      <div className='add-fcs'>
+      <div className='add-child'>
         <form className='add-parent-info'>
-          <h4> Foster Care Specialist info</h4>
           <input type='text'
-                value={this.state.workerName}
+                value={this.state.childName}
                 placeholder='Name'
                 onChange={(e) => this.setState({
-                  workerName: e.target.value
+                  childName: e.target.value
                 })}
           />
           <input type='text'
-                  value={this.state.workerNumber}
+                  value={this.state.childBirthday}
                   placeholder='Number'
                   onChange={(e) => this.setState({
-                    workerNumber: e.target.value
+                    childBirthday: e.target.value
                   })}
           />
           <input type='text'
-                  value={this.state.workerEmail}
+                  value={this.state.childArrivalDate}
                   placeholder='email'
                   onChange={(e) => this.setState({
-                    workerEmail: e.target.value
+                    childArrivalDate: e.target.value
                   })}
           />
           <input type='text'
-                  value={this.state.workerType}
-                  placeholder='Foster or Adoption Worker?'
+                  value={this.state.childInsurance}
+                  placeholder='insurance'
                   onChange={(e) => this.setState({
-                    workerType: e.target.value
+                    childInsurance: e.target.value
                   })}
           />
+
           <button type='submit'
               className="form submit"
               onClick={(e) => this.handleSubmit(e)}>
-              Add Foster Care Specialist
+              Add Child
             </button>
         </form>
       </div>

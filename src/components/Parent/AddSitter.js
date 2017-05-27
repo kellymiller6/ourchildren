@@ -19,8 +19,8 @@ export default class AddSitter extends Component {
 
   render(){
     return(
-      <div className='add-sitter'>
-        <form className='add-sitter-info'>
+      <div className='sitter'>
+        <form className='add-sitter'>
           <h4> Approved Sitter </h4>
           <input type='text'
                 value={this.state.sitterName}

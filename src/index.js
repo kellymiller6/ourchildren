@@ -5,9 +5,11 @@ import App from './components/App';
 import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import AddWorker from './components/ParentProfile/AddWorker';
-import AddSitter from './components/ParentProfile/AddSitter';
-import ParentProfile from './components/ParentProfile/ParentProfile';
+import AddWorker from './components/Parent/AddWorker';
+import AddSitter from './components/Parent/AddSitter';
+import ParentProfile from './components/Parent/ParentProfile';
+import AddChild from './components/Children/AddChild';
+import ChildrenPage from './components/Children/ChildrenPage';
 
 render((
   <Router history={browserHistory}>
@@ -18,6 +20,8 @@ render((
       <Route path="/parentprofile" component={ParentProfile} />
       <Route path="/addworker" component={AddWorker} />
       <Route path="/addsitter" component={AddSitter} />
+      <Route path="/children" component={ChildrenPage} />
+      <Route path="/addchild" component={AddChild} />
     </Route>
   </Router>
 ), document.getElementById('root'))
