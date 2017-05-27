@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ref, currentUser, firebaseApp } from '../../firebase/Firebase';
+import { ref, firebaseApp } from '../../firebase/Firebase';
 
 export default class AddWorker extends Component {
   constructor (){
@@ -22,7 +22,6 @@ export default class AddWorker extends Component {
                        // you have one. Use User.getToken() instead.
     }
   e.preventDefault();
-  console.log('cu', currentUser)
   const usersRef = ref.child('users/'+uid+'/workers');
   usersRef.set(this.state);
  }

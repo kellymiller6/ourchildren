@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ref, firebaseApp } from '../../firebase/Firebase';
 
 export default class AddChild extends Component {
   constructor (){
@@ -12,10 +13,17 @@ export default class AddChild extends Component {
   }
 
   handleSubmit(e) {
-  e.preventDefault();
-  //add to data base
-  }
+    var user = firebaseApp.auth().currentUser;
+    var uid;
 
+    if (user != null) {
+      uid = user.uid;
+    }
+  e.preventDefault();
+
+  const usersRef = ref.child('users/'+uid+'/child' );
+  usersRef.push(this.state);
+ }
 
 
   render(){
