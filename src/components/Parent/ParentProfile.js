@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
 import { firebaseApp, ref } from '../../firebase/Firebase';
+import SitterCard from './SitterCard'
+import WorkerCard from './WorkerCard'
 
 class ParentProfile extends Component {
   constructor(){
     super()
     this.state = {
-      profile: {}
+      workers: {},
+      sitters: {}
     }
   }
 
@@ -18,8 +21,11 @@ class ParentProfile extends Component {
       uid = user.uid;
     }
     ref.child('users/'+uid+'/workers').on('value', snapshot => {
-      console.log('s', snapshot.val())
-        this.setState({profile: snapshot.val()});
+        this.setState({workers: snapshot.val()});
+      });
+    ref.child('users/'+uid+'/sitters').on('value', snapshot => {
+      console.log('sitters', snapshot.val());
+        this.setState({sitters: snapshot.val()});
       });
   }
 
@@ -27,12 +33,25 @@ class ParentProfile extends Component {
   render(){
     return (
       <div className="ParentProfile">
-        <h3>All parent works and approved sitters will go here</h3>
+        <h3>Parent Foster Specialist</h3>
+        {
+          Object.keys(this.state.workers).map((worker, index) =>{
+          return (
+              <WorkerCard workerInfo={this.state.workers[worker]}/>
+          );
+        })}
 
-        <h4>{this.state.profile.workerName}</h4>
-        <p>{this.state.profile.workerNumber}</p>
-        <p>{this.state.profile.workerEmail}</p>
-        <p>{this.state.profile.workerType}</p>
+        <h3>Approved Sitters</h3>
+        {
+          Object.keys(this.state.sitters).map((sitter, index) =>{
+            // console.log('logstate', this.state.sitters[sitter]);
+          return (
+
+
+              <SitterCard sitterInfo={this.state.sitters[sitter]}/>
+
+          );
+        })}
 
         <Link to="/AddWorker"><button className="btn">Add Worker</button></Link>
         <Link to="/AddSitter"><button className="btn">Add Sitter</button></Link>

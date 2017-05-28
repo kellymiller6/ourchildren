@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { ref, firebaseApp } from '../../firebase/Firebase';
+import { browserHistory } from 'react-router'
+
 
 export default class AddChild extends Component {
   constructor (){
@@ -23,7 +25,7 @@ export default class AddChild extends Component {
 
   const usersRef = ref.child('users/'+uid+'/child' );
   usersRef.push(this.state);
-
+  browserHistory.push('/children');
  }
 
 

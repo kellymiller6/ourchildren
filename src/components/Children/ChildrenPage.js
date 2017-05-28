@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router'
 import { firebaseApp, ref } from '../../firebase/Firebase';
 import ChildCard from './ChildCard'
+
+
 class ChildrenPage extends Component {
   constructor(){
     super()
@@ -18,7 +20,8 @@ class ChildrenPage extends Component {
       uid = user.uid;
     }
     ref.child('users/'+uid+'/child').on('value', snapshot => {
-      console.log('cs', snapshot.val())
+      console.log('children', snapshot.val());
+
         this.setState({children: snapshot.val()});
       });
   }
@@ -29,12 +32,8 @@ class ChildrenPage extends Component {
           <h4>All children will go here</h4>
           {
             Object.keys(this.state.children).map((child, index) =>{
-              console.log(this.state.children[child]);
             return (
-
-
                 <ChildCard childInfo={this.state.children[child]}/>
-
             );
           })}
           <Link to="/addchild"><button className="btn">Add Child</button></Link>

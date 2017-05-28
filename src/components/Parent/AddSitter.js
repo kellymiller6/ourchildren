@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { ref, firebaseApp } from '../../firebase/Firebase';
+import { browserHistory } from 'react-router'
 
 export default class AddSitter extends Component {
   constructor (){
@@ -11,9 +13,18 @@ export default class AddSitter extends Component {
   }
 
   handleSubmit(e) {
+    var user = firebaseApp.auth().currentUser;
+    var uid;
+
+    if (user != null) {
+      uid = user.uid;
+    }
   e.preventDefault();
-  //add to data base
-  }
+  const usersRef = ref.child('users/'+uid+'/sitters');
+  usersRef.push(this.state);
+  browserHistory.push('/parentprofile');
+
+ }
 
 
 

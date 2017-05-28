@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ref, firebaseApp } from '../../firebase/Firebase';
+import { browserHistory } from 'react-router'
 
 export default class AddWorker extends Component {
   constructor (){
@@ -17,13 +18,13 @@ export default class AddWorker extends Component {
     var uid;
 
     if (user != null) {
-      uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-                       // this value to authenticate with your backend server, if
-                       // you have one. Use User.getToken() instead.
+      uid = user.uid;
     }
   e.preventDefault();
   const usersRef = ref.child('users/'+uid+'/workers');
-  usersRef.set(this.state);
+  usersRef.push(this.state);
+  browserHistory.push('/parentprofile');
+
  }
 
   render(){
