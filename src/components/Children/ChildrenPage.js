@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router'
 import { firebaseApp, ref } from '../../firebase/Firebase';
 import ChildCard from './ChildCard'
+var CryptoJS = require("crypto-js")
 
 
 class ChildrenPage extends Component {
@@ -20,9 +21,13 @@ class ChildrenPage extends Component {
       uid = user.uid;
     }
     ref.child('users/'+uid+'/child').on('value', snapshot => {
-      console.log('children', snapshot.val());
-
-        this.setState({children: snapshot.val()});
+      // var plaintext = bytes.toString(CryptoJS.enc.Utf8)
+      // console.log('children', snapshot.val());
+        var thatstuff = snapshot.val()
+        console.log('that', thatstuff);
+        var plain = thatstuff.toString(CryptoJS.enc.Utf8)
+        console.log('plain', plain);
+        this.setState({children: plain});
       });
   }
 
