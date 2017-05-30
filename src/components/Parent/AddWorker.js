@@ -31,28 +31,36 @@ export default class AddWorker extends Component {
     return(
       <div className='worker'>
         <form className='add-worker'>
-          <input type='text'
+          <input
+                className='add-input'
+                type='text'
                 value={this.state.workerName}
                 placeholder='Name'
                 onChange={(e) => this.setState({
                   workerName: e.target.value
                 })}
           />
-          <input type='text'
+          <input
+                  className='add-input'
+                  type='text'
                   value={this.state.workerNumber}
                   placeholder='Number'
                   onChange={(e) => this.setState({
                     workerNumber: e.target.value
                   })}
           />
-          <input type='text'
+          <input
+                  className='add-input'
+                  type='text'
                   value={this.state.workerEmail}
                   placeholder='email'
                   onChange={(e) => this.setState({
                     workerEmail: e.target.value
                   })}
           />
-          <input type='text'
+          <input
+                  className='add-input'
+                  type='text'
                   value={this.state.workerType}
                   placeholder='Foster or Adoption Worker?'
                   onChange={(e) => this.setState({

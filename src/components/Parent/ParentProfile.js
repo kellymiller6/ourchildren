@@ -24,7 +24,6 @@ class ParentProfile extends Component {
         this.setState({workers: snapshot.val()});
       });
     ref.child('users/'+uid+'/sitters').on('value', snapshot => {
-      console.log('sitters', snapshot.val());
         this.setState({sitters: snapshot.val()});
       });
   }
@@ -44,12 +43,8 @@ class ParentProfile extends Component {
         <h3>Approved Sitters</h3>
         {
           Object.keys(this.state.sitters).map((sitter, index) =>{
-            // console.log('logstate', this.state.sitters[sitter]);
           return (
-
-
               <SitterCard sitterInfo={this.state.sitters[sitter]}/>
-
           );
         })}
 

@@ -9,11 +9,11 @@ class Signup extends Component {
 
   render() {
     return (
-      <div className="Signup">
-        <h1>Sign up</h1>
+      <div className="create-account">
+        <h1>Create Account</h1>
           <div >
             <button className="btn btn-google" onClick={handleGoogle}>
-              Sign in with Google
+              Sign Up with Google
             </button>
 
         	<p> <Link to="/login">Log In</Link></p>

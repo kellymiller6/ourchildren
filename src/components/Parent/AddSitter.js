@@ -33,21 +33,27 @@ export default class AddSitter extends Component {
       <div className='sitter'>
         <form className='add-sitter'>
           <h4> Approved Sitter </h4>
-          <input type='text'
+          <input
+                className='add-input'
+                type='text'
                 value={this.state.sitterName}
                 placeholder='Name'
                 onChange={(e) => this.setState({
                   sitterName: e.target.value
                 })}
           />
-          <input type='text'
+          <input
+                  className='add-input'
+                  type='text'
                   value={this.state.sitterNumber}
                   placeholder='Number'
                   onChange={(e) => this.setState({
                     sitterNumber: e.target.value
                   })}
           />
-          <input type='text'
+          <input
+                  className='add-input'
+                  type='text'
                   value={this.state.sitterEmail}
                   placeholder='email'
                   onChange={(e) => this.setState({

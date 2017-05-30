@@ -1,8 +1,6 @@
 import React from 'react';
 
 const WorkerCard = ({workerInfo}) => {
-  console.log('cc', workerInfo);
-
   return(
     <div>
       <h5>{workerInfo.workerName}</h5>
