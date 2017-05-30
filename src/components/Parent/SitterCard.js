@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SitterCard = ({sitterInfo}) => {
-  console.log('cc', sitterInfo);
+  // console.log('cc', sitterInfo);
 
   return(
     <div >

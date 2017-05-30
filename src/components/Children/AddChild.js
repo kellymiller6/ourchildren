@@ -25,13 +25,14 @@ export default class AddChild extends Component {
   e.preventDefault();
   const ciphertext = CryptoJS.AES.encrypt(JSON.stringify(this.state), 'secret key 123')
   console.log('cipher', ciphertext);
-  var bytes  = CryptoJS.AES.decrypt(ciphertext.toString(), 'secret key 123');
-  console.log('bytes', bytes);
+  var strCipher = ciphertext.toString()
+  // var bytes  = CryptoJS.AES.decrypt(ciphertext.toString(), 'secret key 123');
+  // console.log('bytes', bytes);
   // var plaintext = bytes.toString(CryptoJS.enc.Utf8);
   //
   // console.log('plain', plaintext)
   const usersRef = ref.child('users/'+uid+'/child' );
-  usersRef.set(bytes);
+  usersRef.set(strCipher);
   browserHistory.push('/children');
  }
 

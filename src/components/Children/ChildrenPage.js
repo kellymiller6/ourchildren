@@ -23,11 +23,14 @@ class ChildrenPage extends Component {
     ref.child('users/'+uid+'/child').on('value', snapshot => {
       // var plaintext = bytes.toString(CryptoJS.enc.Utf8)
       // console.log('children', snapshot.val());
-        var thatstuff = snapshot.val()
-        console.log('that', thatstuff);
-        var plain = thatstuff.toString(CryptoJS.enc.Utf8)
-        console.log('plain', plain);
-        this.setState({children: plain});
+        var snaps = snapshot.val()
+        console.log('snapshot', snaps);
+        var bytes  = CryptoJS.AES.decrypt(snaps, 'secret key 123');
+        console.log('bytes', bytes);
+        var plaintext =JSON.parse( bytes.toString(CryptoJS.enc.Utf8));
+
+        console.log('plain', plaintext)
+        this.setState({children: plaintext});
       });
   }
 
@@ -35,12 +38,10 @@ class ChildrenPage extends Component {
     return (
         <div className="ChildrenPage">
           <h4>All children will go here</h4>
-          {
-            Object.keys(this.state.children).map((child, index) =>{
-            return (
-                <ChildCard childInfo={this.state.children[child]}/>
-            );
-          })}
+
+
+                <ChildCard childInfo={this.state.children}/>
+
           <Link to="/addchild"><button className="btn">Add Child</button></Link>
         </div>
       );
