@@ -9,7 +9,7 @@ class ChildrenPage extends Component {
   constructor(){
     super()
     this.state = {
-      children: {}
+      children: []
     }
   }
 
@@ -21,16 +21,22 @@ class ChildrenPage extends Component {
       uid = user.uid;
     }
     ref.child('users/'+uid+'/child').on('value', snapshot => {
-      // var plaintext = bytes.toString(CryptoJS.enc.Utf8)
-      // console.log('children', snapshot.val());
+
         var snaps = snapshot.val()
         console.log('snapshot', snaps);
-        var bytes  = CryptoJS.AES.decrypt(snaps, 'secret key 123');
-        console.log('bytes', bytes);
-        var plaintext =JSON.parse( bytes.toString(CryptoJS.enc.Utf8));
-
-        console.log('plain', plaintext)
-        this.setState({children: plaintext});
+        var newArr = Object.keys(snaps).map((kid, index)=>{
+          return(
+             CryptoJS.AES.decrypt(snaps[kid], 'secret key 123')
+          )
+        })
+        console.log('newArr', newArr);
+        var newNewArray = newArr.map((kiddo,index)=>{
+          return(
+            JSON.parse(kiddo.toString(CryptoJS.enc.Utf8))
+          )
+        })
+        console.log('newNewArray', newNewArray);
+        this.setState({children: newNewArray});
       });
   }
 
@@ -38,10 +44,11 @@ class ChildrenPage extends Component {
     return (
         <div className="ChildrenPage">
           <h4>All children will go here</h4>
-
-
-                <ChildCard childInfo={this.state.children}/>
-
+          {this.state.children.map((child,index) => {
+            return(
+                <ChildCard childInfo={child}/>
+            )
+          })}
           <Link to="/addchild"><button className="btn">Add Child</button></Link>
         </div>
       );

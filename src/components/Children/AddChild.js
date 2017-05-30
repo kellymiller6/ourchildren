@@ -26,13 +26,8 @@ export default class AddChild extends Component {
   const ciphertext = CryptoJS.AES.encrypt(JSON.stringify(this.state), 'secret key 123')
   console.log('cipher', ciphertext);
   var strCipher = ciphertext.toString()
-  // var bytes  = CryptoJS.AES.decrypt(ciphertext.toString(), 'secret key 123');
-  // console.log('bytes', bytes);
-  // var plaintext = bytes.toString(CryptoJS.enc.Utf8);
-  //
-  // console.log('plain', plaintext)
   const usersRef = ref.child('users/'+uid+'/child' );
-  usersRef.set(strCipher);
+  usersRef.push(strCipher);
   browserHistory.push('/children');
  }
 
