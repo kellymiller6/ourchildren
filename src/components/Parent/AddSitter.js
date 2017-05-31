@@ -6,7 +6,7 @@ export default class AddSitter extends Component {
   constructor (){
     super()
     this.state = {
-      sitterName: '',
+      name: '',
       sitterNumber:'',
       sitterEmail:''
     }
@@ -20,10 +20,10 @@ export default class AddSitter extends Component {
           <input
                 className='add-input'
                 type='text'
-                value={this.state.sitterName}
+                value={this.state.name}
                 placeholder='Name'
                 onChange={(e) => this.setState({
-                  sitterName: e.target.value
+                  name: e.target.value
                 })}
           />
           <input

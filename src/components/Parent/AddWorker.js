@@ -6,7 +6,7 @@ export default class AddWorker extends Component {
   constructor (){
     super()
     this.state = {
-      workerName: '',
+      name: '',
       workerNumber:'',
       workerEmail:'',
       workerType:''
@@ -20,10 +20,10 @@ export default class AddWorker extends Component {
           <input
                 className='add-input'
                 type='text'
-                value={this.state.workerName}
+                value={this.state.name}
                 placeholder='Name'
                 onChange={(e) => this.setState({
-                  workerName: e.target.value
+                  name: e.target.value
                 })}
           />
           <input

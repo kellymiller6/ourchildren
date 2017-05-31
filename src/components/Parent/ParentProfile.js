@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
 import { retrieveData } from '../../firebase/Firebase';
-import SitterCard from './SitterCard'
-import WorkerCard from './WorkerCard'
+import Card from '../Children/Card'
 
 class ParentProfile extends Component {
   constructor(){
@@ -29,7 +28,7 @@ class ParentProfile extends Component {
         {
           (this.state.workers).map((worker, index) =>{
           return (
-              <WorkerCard workerInfo={worker}/>
+              <Card key={index} objInfo={worker}/>
           );
         })}
 
@@ -37,7 +36,7 @@ class ParentProfile extends Component {
         {
           (this.state.sitters).map((sitter, index) =>{
           return (
-              <SitterCard key={index} sitterInfo={sitter}/>
+              <Card key={index} objInfo={sitter}/>
           );
         })}
 

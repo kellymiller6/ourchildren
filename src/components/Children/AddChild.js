@@ -6,7 +6,7 @@ export default class AddChild extends Component {
   constructor (){
     super()
     this.state = {
-      childName: '',
+      name: '',
       childBirthday:'',
       childArrivalDate:'',
       childInsurance:'',
@@ -19,10 +19,10 @@ export default class AddChild extends Component {
         <form className='add-parent-info'>
           <input className='add-input'
                 type='text'
-                value={this.state.childName}
+                value={this.state.name}
                 placeholder='Name'
                 onChange={(e) => this.setState({
-                  childName: e.target.value
+                  name: e.target.value
                 })}
           />
           <input className='add-input'
