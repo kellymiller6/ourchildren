@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
-import { firebaseApp, ref } from '../../firebase/Firebase';
+import { retrieveData } from '../../firebase/Firebase';
 import SitterCard from './SitterCard'
 import WorkerCard from './WorkerCard'
 
@@ -8,25 +8,18 @@ class ParentProfile extends Component {
   constructor(){
     super()
     this.state = {
-      workers: {},
-      sitters: {}
+      workers: [],
+      sitters: []
     }
+
   }
 
   componentDidMount(){
-    var user = firebaseApp.auth().currentUser;
-    var uid;
-
-    if (user != null) {
-      uid = user.uid;
-    }
-    ref.child('users/'+uid+'/workers').on('value', snapshot => {
-        this.setState({workers: snapshot.val()});
-      });
-    ref.child('users/'+uid+'/sitters').on('value', snapshot => {
-        this.setState({sitters: snapshot.val()});
-      });
+    retrieveData.call(this, 'workers')
+    retrieveData.call(this, 'sitters')
   }
+
+
 
 
   render(){
@@ -34,17 +27,17 @@ class ParentProfile extends Component {
       <div className="ParentProfile">
         <h3>Parent Foster Specialist</h3>
         {
-          Object.keys(this.state.workers).map((worker, index) =>{
+          (this.state.workers).map((worker, index) =>{
           return (
-              <WorkerCard workerInfo={this.state.workers[worker]}/>
+              <WorkerCard workerInfo={worker}/>
           );
         })}
 
         <h3>Approved Sitters</h3>
         {
-          Object.keys(this.state.sitters).map((sitter, index) =>{
+          (this.state.sitters).map((sitter, index) =>{
           return (
-              <SitterCard sitterInfo={this.state.sitters[sitter]}/>
+              <SitterCard key={index} sitterInfo={sitter}/>
           );
         })}
 

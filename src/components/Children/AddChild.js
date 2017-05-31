@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { ref, firebaseApp } from '../../firebase/Firebase';
-import { browserHistory } from 'react-router'
-var CryptoJS = require("crypto-js")
+import { handleSubmit } from '../../firebase/Firebase';
 
 
 export default class AddChild extends Component {
@@ -14,23 +12,6 @@ export default class AddChild extends Component {
       childInsurance:'',
     }
   }
-
-  handleSubmit(e) {
-    var user = firebaseApp.auth().currentUser;
-    var uid;
-
-    if (user != null) {
-      uid = user.uid;
-    }
-  e.preventDefault();
-  const ciphertext = CryptoJS.AES.encrypt(JSON.stringify(this.state), 'secret key 123')
-  console.log('cipher', ciphertext);
-  var strCipher = ciphertext.toString()
-  const usersRef = ref.child('users/'+uid+'/child' );
-  usersRef.push(strCipher);
-  browserHistory.push('/children');
- }
-
 
   render(){
     return(
@@ -71,7 +52,7 @@ export default class AddChild extends Component {
 
           <button type='submit'
               className="form submit"
-              onClick={(e) => this.handleSubmit(e)}>
+              onClick={handleSubmit.bind(null, 'child', this.state, 'children')}>
               Add Child
             </button>
         </form>

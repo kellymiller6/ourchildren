@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { ref, firebaseApp } from '../../firebase/Firebase';
-import { browserHistory } from 'react-router'
+import { handleSubmit } from '../../firebase/Firebase';
+
 
 export default class AddSitter extends Component {
   constructor (){
@@ -11,22 +11,6 @@ export default class AddSitter extends Component {
       sitterEmail:''
     }
   }
-
-  handleSubmit(e) {
-    var user = firebaseApp.auth().currentUser;
-    var uid;
-
-    if (user != null) {
-      uid = user.uid;
-    }
-  e.preventDefault();
-  const usersRef = ref.child('users/'+uid+'/sitters');
-  usersRef.push(this.state);
-  browserHistory.push('/parentprofile');
-
- }
-
-
 
   render(){
     return(
@@ -62,7 +46,7 @@ export default class AddSitter extends Component {
           />
           <button type='submit'
               className="form submit"
-              onClick={(e) => this.handleSubmit(e)}>
+              onClick={handleSubmit.bind(null, 'sitters', this.state, 'parentprofile')}>
               Add Sitter
             </button>
         </form>

@@ -8,6 +8,7 @@ const ChildCard = ({childInfo}) => {
       <p>{childInfo.childBirthday}</p>
       <p>{childInfo.childArrivalDate}</p>
       <p>{childInfo.childInsurance}</p>
+      <button>Edit</button>
     </div>
   )
 }

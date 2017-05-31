@@ -1,6 +1,7 @@
 import React from 'react';
 
 const SitterCard = ({sitterInfo}) => {
+  //grab the keys to dynamically generate the card
   return(
     <div >
       <h5 >{sitterInfo.sitterName}</h5>
