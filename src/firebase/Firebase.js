@@ -54,7 +54,7 @@ export const handleSubmit = (destination, dataObject, historyEntry, event) => {
   browserHistory.push('/' + historyEntry);
  }
 
-export const retrieveData = function (location){
+export const retrieveData = function (location, actionCreatorFunction){
   var user = firebaseApp.auth().currentUser;
   var uid;
 
@@ -75,13 +75,7 @@ export const retrieveData = function (location){
     })
     console.log('des', location);
 
-    if(location === 'workers'){
-     this.setState({workers: newNewArray})
-    } else if (location === 'sitters'){
-     this.setState({sitters: newNewArray});
-    } else {
-     this.setState({children: newNewArray})
-    }
+    actionCreatorFunction(newNewArray);
 
   })
  }

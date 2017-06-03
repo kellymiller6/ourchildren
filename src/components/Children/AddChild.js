@@ -52,7 +52,7 @@ export default class AddChild extends Component {
 
           <button type='submit'
               className="form submit"
-              onClick={handleSubmit.bind(null, 'child', this.state, 'children')}>
+              onClick={()=>this.props.addChild(this.state)}>
               Add Child
             </button>
         </form>

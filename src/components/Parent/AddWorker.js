@@ -55,7 +55,7 @@ export default class AddWorker extends Component {
           />
           <button type='submit'
               className="form submit"
-              onClick={handleSubmit.bind(null, 'workers', this.state, 'parentprofile')}>
+              onClick={()=>this.props.addWorker(this.state)}>
               Add Foster Care Specialist
             </button>
         </form>

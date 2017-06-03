@@ -46,7 +46,7 @@ export default class AddSitter extends Component {
           />
           <button type='submit'
               className="form submit"
-              onClick={handleSubmit.bind(null, 'sitters', this.state, 'parentprofile')}>
+              onClick={()=>this.props.addSitter(this.state)}>
               Add Sitter
             </button>
         </form>

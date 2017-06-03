@@ -7,19 +7,12 @@ import Card from './Card'
 class ChildrenPage extends Component {
   constructor(){
     super()
-    this.state = {
-      children: []
-    }
-  }
-
-  componentWillMount(){
-    retrieveData.call(this, 'child')
   }
   render(){
     return (
         <div className="ChildrenPage">
           <h4>All children will go here</h4>
-          {this.state.children.map((child,index) => {
+          {this.props.children.map((child,index) => {
             return(
                 <Card key={index} objInfo={child}/>
             )
