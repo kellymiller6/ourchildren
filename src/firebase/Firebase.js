@@ -1,16 +1,15 @@
 import * as firebase from 'firebase';
 import { browserHistory } from 'react-router'
-var CryptoJS = require("crypto-js")
 
 
 const config = {
-   apiKey: "AIzaSyAkqJ_VGB8PCVT-CEl8KXxh3TEkVV8iG-M",
-   authDomain: "our-children.firebaseapp.com",
-   databaseURL: "https://our-children.firebaseio.com",
-   projectId: "our-children",
-   storageBucket: "our-children.appspot.com",
-   messagingSenderId: "143250240679"
-  };
+  apiKey: "AIzaSyAkqJ_VGB8PCVT-CEl8KXxh3TEkVV8iG-M",
+  authDomain: "our-children.firebaseapp.com",
+  databaseURL: "https://our-children.firebaseio.com",
+  projectId: "our-children",
+  storageBucket: "our-children.appspot.com",
+  messagingSenderId: "143250240679"
+};
 
 export const firebaseApp  = firebase.initializeApp(config);
 
@@ -37,51 +36,5 @@ export const handleGoogle = (e) => {
    var errorMessage = error.message;
    alert("Google error "+ errorMessage);
  });
+ browserHistory.push('/');
 }
-
-export const handleSubmit = (destination, dataObject, historyEntry, event) => {
-
-  const user = firebaseApp.auth().currentUser;
-  let uid;
-  if (user != null) {
-    uid = user.uid;
-  }
-  event.preventDefault();
-  const ciphertext = CryptoJS.AES.encrypt(JSON.stringify(dataObject), 'secret key 123')
-  var strCipher = ciphertext.toString()
-  const targetRef = ref.child('users/' + uid + '/' + destination);
-  targetRef.push(strCipher);
-  browserHistory.push('/' + historyEntry);
- }
-
-export const retrieveData = function (location){
-  var user = firebaseApp.auth().currentUser;
-  var uid;
-
-  if (user != null) {
-    uid = user.uid;
-  }
-  ref.child('users/'+uid+'/'+location).on('value', snapshot => {
-    var snaps = snapshot.val()
-    var newArr = Object.keys(snaps).map((person, index)=>{
-      return(
-        CryptoJS.AES.decrypt(snaps[person], 'secret key 123')
-      )
-    })
-    var newNewArray = newArr.map((item,index)=>{
-      return(
-        JSON.parse(item.toString(CryptoJS.enc.Utf8))
-      )
-    })
-    console.log('des', location);
-
-    if(location === 'workers'){
-     this.setState({workers: newNewArray})
-    } else if (location === 'sitters'){
-     this.setState({sitters: newNewArray});
-    } else {
-     this.setState({children: newNewArray})
-    }
-
-  })
- }

@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { handleSubmit } from '../../firebase/Firebase';
-
 
 export default class AddSitter extends Component {
   constructor (){
@@ -18,7 +16,7 @@ export default class AddSitter extends Component {
         <form className='add-sitter'>
           <h4> Approved Sitter </h4>
           <input
-                className='add-input'
+                className='add-input name'
                 type='text'
                 value={this.state.name}
                 placeholder='Name'
@@ -46,7 +44,7 @@ export default class AddSitter extends Component {
           />
           <button type='submit'
               className="form submit"
-              onClick={handleSubmit.bind(null, 'sitters', this.state, 'parentprofile')}>
+              onClick={()=>this.props.addSitter(this.state)}>
               Add Sitter
             </button>
         </form>

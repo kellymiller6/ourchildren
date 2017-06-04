@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { handleSubmit } from '../../firebase/Firebase';
 
 
 export default class AddChild extends Component {
@@ -17,7 +16,7 @@ export default class AddChild extends Component {
     return(
       <div className='add-child'>
         <form className='add-parent-info'>
-          <input className='add-input'
+          <input className='add-input name'
                 type='text'
                 value={this.state.name}
                 placeholder='Name'
@@ -52,7 +51,7 @@ export default class AddChild extends Component {
 
           <button type='submit'
               className="form submit"
-              onClick={handleSubmit.bind(null, 'child', this.state, 'children')}>
+              onClick={()=>this.props.addChild(this.state)}>
               Add Child
             </button>
         </form>

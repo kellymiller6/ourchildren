@@ -1,19 +1,17 @@
 import React from 'react';
 
 const Card = ({objInfo}) => {
-  var keys = Object.keys(objInfo)
+  const keys = Object.keys(objInfo)
   return(
     <div>
-
-      {keys.map((key,index)=>{
-        console.log(key);
-        if(key === 'name'){
+      { keys.map((oneKey,index) => {
+        if(oneKey === 'name'){
           return(
-            <h3>{objInfo[key]}</h3>
+            <h3 key={index} className='card-name'>{objInfo[oneKey]}</h3>
           )
         }
         return(
-          <p>{objInfo[key]}</p>
+          <p key={index} className='card-keys'>{objInfo[oneKey]}</p>
         )
       })}
     </div>

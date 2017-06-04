@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { firebaseApp, signout} from '../firebase/Firebase';
-import Navbar from './Navbar';
+import Navbar from './AuthPages/Navbar';
 import '../styles/app.css'
+
 
 class App extends Component {
   constructor(props) {
@@ -11,10 +12,13 @@ class App extends Component {
       };
   }
 
-  componentWillMount(){
+  componentDidMount(){
     firebaseApp.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({loggedin: true});
+        this.props.fetchSitters()
+        this.props.fetchWorkers()
+        this.props.fetchChildren()
       } else {
         this.setState({loggedin: false});
       }
