@@ -8,19 +8,19 @@ class Navbar extends Component {
     let parentProfile;
     let children;
     if (this.props.loggedin) {
-      loginButton = <button className="btn" onClick={this.props.determinedlog}>Logout</button>;
+      loginButton = <button className="nav-btn btn" onClick={this.props.determinedlog}>Logout</button>;
       signup = "";
-      parentProfile = <Link to="/parentprofile" ><button className="btn">Parent</button></Link>
-      children = <Link to="/children"><button className="btn">Children</button></Link>
+      parentProfile = <Link activeClassName="active" to="/parentprofile" ><button className="nav-btn btn">Parent</button></Link>
+      children = <Link to="/children"><button className="nav-btn btn">Children</button></Link>
     } else {
-      loginButton = <Link to="/login"><button className="btn">login</button></Link>;
-      signup = <Link to="/signup"><button className="btn">Sign up</button></Link>;
+      loginButton = <Link to="/login"><button className="nav-btn btn">Login</button></Link>;
+      signup = <Link to="/signup"><button className="nav-btn btn">Sign up</button></Link>;
       parentProfile =""
       children =""
     }
     return (
       <div className="Navbar">
-        <Link className='home-link' to="/"><button className="btn">Home</button></Link>
+        <Link className='home-link' to="/"><button className="nav-btn btn">Home</button></Link>
         {loginButton}
         {signup}
         {parentProfile}

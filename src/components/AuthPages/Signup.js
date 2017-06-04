@@ -5,13 +5,13 @@ import { handleGoogle } from '../../firebase/Firebase';
 const Signup = () => {
   return (
     <div className="create-account">
-      <h1>Create Account</h1>
+      <h4>Create Account</h4>
         <div >
-          <button className="btn btn-google" onClick={handleGoogle}>
+          <button className="btn btn-google add-btn" onClick={handleGoogle}>
             Sign Up with Google
           </button>
 
-      	<p> <Link to="/login">Log In</Link></p>
+      	<p> <Link className='link' to="/login">Already have an account? Log In!</Link></p>
       </div>
     </div>
   );

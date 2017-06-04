@@ -1,4 +1,92 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   margin-top: 2%;
   text-align: center;
+  background-color: #bfd8bd;
+}
+
+body{
+  background-color: #bfd8bd;
+}
+
+.card {
+  margin: 2%;
+  color: #002746;
+  font-family: 'Open Sans', sans-serif;
+  border: 1px solid #185253;
+  min-width: 66%;
+  max-width: 90%;
+}
+
+.quotes {
+  width: 75%;
+  color: #002746;
+  font-size: 2em;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.ParentProfile,
+.ChildrenPage,
+.add-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+h1 {
+  font-size: 3em;
+  color: #185253;
+  font-family: 'Nunito', sans-serif;
+}
+
+h4{
+  font-size: 1.5em;
+  color: #185253;
+  font-family: 'Nunito', sans-serif;
+}
+
+input{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  margin: 20px;
+  height: 30px;
+}
+
+.nav-btn {
+  margin: 10px 20px;
+  border: none;
+  border-bottom: 1px solid #185253;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  background-color: #bfd8bd;
+  color: #185253;
+}
+.nav-btn:hover{
+  border-bottom: 1px solid #f6ce89;
+}
+
+.add-btn {
+  margin: 10px 20px;
+  background-color: #bfd8bd;
+  color: #185253;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  border: 1px solid #185253;
+}
+
+.add-btn:hover {
+  border: 1px solid #f6ce89;
+}
+
+.link{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  color: #185253;
 }

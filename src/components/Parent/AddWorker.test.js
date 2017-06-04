@@ -34,9 +34,9 @@ describe('AddWorker component', () => {
   it('should begin with default state', () => {
     expect(Component.node.state).toEqual({
       name: '',
-      workerNumber:'',
-      workerEmail:'',
-      workerType:''
+      Phone:'',
+      Email:'',
+      Type:''
     });
   });
 
@@ -46,9 +46,9 @@ describe('AddWorker component', () => {
 
     expect(Component.node.state).toEqual({
       name: 'kelly',
-      workerNumber:'',
-      workerEmail:'',
-      workerType:''
+      Phone:'',
+      Email:'',
+      Type:''
     });
   });
 });

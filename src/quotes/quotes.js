@@ -1,6 +1,4 @@
-{
-  "count": 31,
-  "results":  [
+export const quotes = [
     {
       "Quote": "MAY ALL CHILDREN HAVE THE FREEDOM TO SAFETLY BE CHILDREN",
       "Author": "CLEO WADE"
@@ -47,7 +45,7 @@
     },
     {
       "Quote": "Be Gentle with yourself.",
-      "Author":
+      "Author":'Unknown'
     },
     {
       "Quote": "Don't ask yourself what the world needs; as yourself what makes you come alive. And then go and do that. Because what the world needs is people who have come alive.",
@@ -126,4 +124,3 @@
       "Author": "Meredith Marple"
     }
   ]
-}

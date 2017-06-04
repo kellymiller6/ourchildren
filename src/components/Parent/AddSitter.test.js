@@ -36,8 +36,8 @@ describe('AddSitter component', () => {
   it('should begin with default state', () => {
     expect(Component.node.state).toEqual({
       name: '',
-      sitterNumber:'',
-      sitterEmail:''
+      Phone:'',
+      Email:''
     });
   });
 
@@ -48,9 +48,9 @@ describe('AddSitter component', () => {
 
 
     expect(Component.node.state).toEqual({
-      name: 'kelly',
-      sitterNumber:'',
-      sitterEmail:''
+      name: '',
+      Phone:'',
+      Email:''
     });
   });
 });

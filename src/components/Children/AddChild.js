@@ -6,16 +6,19 @@ export default class AddChild extends Component {
     super()
     this.state = {
       name: '',
-      childBirthday:'',
-      childArrivalDate:'',
-      childInsurance:'',
+      Birthday:'',
+      Arrival:'',
+      Insurance:'',
+      Worker_Name: '',
+      Worker_Number: '',
+      Worker_Email: ''
     }
   }
 
   render(){
     return(
       <div className='add-child'>
-        <form className='add-parent-info'>
+        <form className='add-info'>
           <input className='add-input name'
                 type='text'
                 value={this.state.name}
@@ -29,7 +32,7 @@ export default class AddChild extends Component {
                   value={this.state.childBirthday}
                   placeholder='Birthday'
                   onChange={(e) => this.setState({
-                    childBirthday: e.target.value
+                    Birthday: e.target.value
                   })}
           />
           <input className='add-input'
@@ -37,20 +40,44 @@ export default class AddChild extends Component {
                   value={this.state.childArrivalDate}
                   placeholder='Arrival Date'
                   onChange={(e) => this.setState({
-                    childArrivalDate: e.target.value
+                    Arrival: e.target.value
                   })}
           />
           <input className='add-input'
                   type='text'
                   value={this.state.childInsurance}
-                  placeholder='insurance'
+                  placeholder='Insurance'
                   onChange={(e) => this.setState({
-                    childInsurance: e.target.value
+                    Insurance: e.target.value
+                  })}
+          />
+          <input className='add-input'
+                  type='text'
+                  value={this.state.childInsurance}
+                  placeholder='Worker Name'
+                  onChange={(e) => this.setState({
+                    Worker_Name: e.target.value
+                  })}
+          />
+          <input className='add-input'
+                  type='text'
+                  value={this.state.childInsurance}
+                  placeholder='Worker Number'
+                  onChange={(e) => this.setState({
+                    Worker_Number: e.target.value
+                  })}
+          />
+          <input className='add-input'
+                  type='text'
+                  value={this.state.childInsurance}
+                  placeholder='Worker Email'
+                  onChange={(e) => this.setState({
+                    Worker_Email: e.target.value
                   })}
           />
 
           <button type='submit'
-              className="form submit"
+              className="form submit add-btn"
               onClick={()=>this.props.addChild(this.state)}>
               Add Child
             </button>
