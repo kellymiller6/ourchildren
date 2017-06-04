@@ -20,7 +20,7 @@ class Navbar extends Component {
     }
     return (
       <div className="Navbar">
-        <Link to="/"><button className="btn">Home</button></Link>
+        <Link className='home-link' to="/"><button className="btn">Home</button></Link>
         {loginButton}
         {signup}
         {parentProfile}

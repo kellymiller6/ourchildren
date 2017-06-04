@@ -9,7 +9,6 @@ import ChildrenPage from './ChildrenPage';
 const state = {};
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares)();
-console.log(mockStore);
 const setup = () => {
   const Container = mount(<Provider store={mockStore}><ChildrenPageContainer /></Provider>);
   const Component = Container.find(ChildrenPage);
