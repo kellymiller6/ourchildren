@@ -1,19 +1,24 @@
-import { receiveData } from '../firebase/Firebase.js'
 var CryptoJS = require("crypto-js")
-import { firebaseApp, signout, ref} from '../firebase/Firebase';
+import { firebaseApp, ref} from '../firebase/Firebase';
+import { browserHistory } from 'react-router'
+
 
 export const addObject = (object, objType) => {
   return dispatch =>{
-    debugger;
     const user = firebaseApp.auth().currentUser;
     let uid;
     if (user != null) {
       uid = user.uid;
     }
-    const ciphertext = CryptoJS.AES.encrypt(JSON.stringify(object), 'secret key 123')
-    var strCipher = ciphertext.toString()
+    const ciphertext = CryptoJS.AES.encrypt(JSON.stringify(object), 'secret')
+    const strCipher = ciphertext.toString()
     const targetRef = ref.child('users/' + uid + '/' + objType);
     targetRef.push(strCipher);
+    if(objType === 'children'){
+      browserHistory.push('/children')
+    } else {
+      browserHistory.push('/parentprofile')
+    }
   }
 }
 
@@ -30,7 +35,6 @@ export const receiveWorkers = (workers) => {
   }
 }
 export const receiveChildren = (children) => {
-  console.log('rc', children);
   return {
     type: 'RECEIVE_CHILDREN',
     children
@@ -38,25 +42,23 @@ export const receiveChildren = (children) => {
 }
 
 export const fetchData = (location, actionCreator) => {
-  console.log('fetch');
   return dispatch => {
-    var user1 = firebaseApp.auth().currentUser;
-    var uid;
-
+    const user1 = firebaseApp.auth().currentUser;
+    let uid;
     if (user1 != null) {
       uid = user1.uid;
     }
     ref.child('users/'+uid+'/'+location).on('value', snapshot => {
-      var snaps = snapshot.val()
+      const snaps = snapshot.val()
       if(!snaps){
         return
       }
-      var newArr = Object.keys(snaps).map((person, index)=>{
+      const newArr = Object.keys(snaps).map((person, index)=>{
         return(
-          CryptoJS.AES.decrypt(snaps[person], 'secret key 123')
+          CryptoJS.AES.decrypt(snaps[person], 'secret')
         )
       })
-      var newNewArray = newArr.map((item,index)=>{
+      const newNewArray = newArr.map((item,index)=>{
         const itemStr = item.toString(CryptoJS.enc.Utf8)
         if(itemStr.length === 0){
           return {}

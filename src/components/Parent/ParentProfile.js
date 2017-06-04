@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
-import { retrieveData } from '../../firebase/Firebase';
 import Card from '../Children/Card'
 
 class ParentProfile extends Component {
-  constructor(){
-    super()
-  }
 
   render(){
     return (
@@ -14,18 +10,20 @@ class ParentProfile extends Component {
         <h3>Parent Foster Specialist</h3>
         {
           (this.props.workers).map((worker, index) =>{
-          return (
+            return (
               <Card key={index} objInfo={worker}/>
-          );
-        })}
+            );
+          })
+        }
 
         <h3>Approved Sitters</h3>
         {
           (this.props.sitters).map((sitter, index) =>{
-          return (
+            return (
               <Card key={index} objInfo={sitter}/>
-          );
-        })}
+            );
+          })
+        }
 
         <Link to="/AddWorker"><button className="btn">Add Worker</button></Link>
         <Link to="/AddSitter"><button className="btn">Add Sitter</button></Link>

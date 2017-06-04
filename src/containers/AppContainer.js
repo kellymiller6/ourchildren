@@ -1,9 +1,6 @@
-import * as actions from '../actions';
 import { fetchData, receiveSitters, receiveWorkers, receiveChildren } from '../actions'
 import { connect } from 'react-redux';
-import App from './App'
-
-
+import App from '../components/App'
 
 const mapDispatchToProps = (dispatch) => {
   return {

@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
-import { addObject } from '../../actions'
+import { addObject } from '../actions'
 
-import AddChild from './AddChild'
+import AddChild from '../components/Children/AddChild'
 
 const mapStateToProps = (state) => {
   return {

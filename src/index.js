@@ -4,19 +4,20 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import createHistory from 'history/createBrowserHistory'
-import {routerReducer, routerMiddleware} from 'react-router-redux'
+import {routerMiddleware} from 'react-router-redux'
 import thunk from 'redux-thunk';
 
-import AppContainer from './components/AppContainer';
-import Home from './components/Home';
-import Login from './components/Login';
-import Signup from './components/Signup';
-import AddWorkerContainer from './components/Parent/AddWorkerContainer';
-import AddSitterContainer from './components/Parent/AddSitterContainer';
-import ParentProfileContainer from './components/Parent/ParentProfileContainer';
-import AddChildContainer from './components/Children/AddChildContainer';
-import ChildrenPageContainer from './components/Children/ChildrenPageContainer';
+import AppContainer from './containers/AppContainer';
+import Home from './components/AuthPages/Home';
+import Login from './components/AuthPages/Login';
+import Signup from './components/AuthPages/Signup';
+import AddWorkerContainer from './containers/AddWorkerContainer';
+import AddSitterContainer from './containers/AddSitterContainer';
+import ParentProfileContainer from './containers/ParentProfileContainer';
+import AddChildContainer from './containers/AddChildContainer';
+import ChildrenPageContainer from './containers/ChildrenPageContainer';
 import rootReducer from './reducers/reducers.js'
+
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
 const history = createHistory()

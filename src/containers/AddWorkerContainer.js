@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
-import { addObject } from '../../actions'
+import { addObject } from '../actions'
 
-import AddWorker from './AddWorker'
+import AddWorker from '../components/Parent/AddWorker'
 
 const mapStateToProps = (state) => {
   return {

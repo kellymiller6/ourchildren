@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { handleSubmit } from '../../firebase/Firebase';
-
 
 export default class AddWorker extends Component {
   constructor (){

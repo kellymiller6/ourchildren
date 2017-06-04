@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { handleSubmit } from '../../firebase/Firebase';
 
 
 export default class AddChild extends Component {

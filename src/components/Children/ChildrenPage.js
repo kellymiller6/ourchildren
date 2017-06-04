@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
-import { retrieveData } from '../../firebase/Firebase';
 import Card from './Card'
 
-
 class ChildrenPage extends Component {
-  constructor(){
-    super()
-  }
   render(){
     return (
         <div className="ChildrenPage">
           <h4>All children will go here</h4>
-          {this.props.children.map((child,index) => {
+          {
+            this.props.children.map((child, index) => {
             return(
                 <Card key={index} objInfo={child}/>
             )

@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
-import { addObject } from '../../actions'
+import { addObject } from '../actions'
 
-import AddSitter from './AddSitter'
+import AddSitter from '../components/Parent/AddSitter'
 
 const mapStateToProps = (state) => {
   return {

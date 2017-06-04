@@ -1,6 +1,5 @@
 import {connect} from 'react-redux';
-
-import ChildrenPage from './ChildrenPage'
+import ChildrenPage from '../components/Children/ChildrenPage'
 
 const mapStateToProps = (state) => {
   return {

@@ -1,6 +1,5 @@
 import {connect} from 'react-redux';
-
-import ParentProfile from './ParentProfile'
+import ParentProfile from '../components/Parent/ParentProfile'
 
 const mapStateToProps = (state) => {
   return {

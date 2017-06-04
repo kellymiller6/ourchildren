@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { firebaseApp, signout, ref} from '../firebase/Firebase';
-import Navbar from './Navbar';
+import { firebaseApp, signout} from '../firebase/Firebase';
+import Navbar from './AuthPages/Navbar';
 import '../styles/app.css'
-var CryptoJS = require("crypto-js")
 
 
 class App extends Component {
@@ -13,7 +12,7 @@ class App extends Component {
       };
   }
 
-  componentWillMount(){
+  componentDidMount(){
     firebaseApp.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({loggedin: true});
