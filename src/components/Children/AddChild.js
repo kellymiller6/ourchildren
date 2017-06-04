@@ -16,7 +16,7 @@ export default class AddChild extends Component {
     return(
       <div className='add-child'>
         <form className='add-parent-info'>
-          <input className='add-input'
+          <input className='add-input name'
                 type='text'
                 value={this.state.name}
                 placeholder='Name'

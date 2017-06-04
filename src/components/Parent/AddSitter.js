@@ -16,7 +16,7 @@ export default class AddSitter extends Component {
         <form className='add-sitter'>
           <h4> Approved Sitter </h4>
           <input
-                className='add-input'
+                className='add-input name'
                 type='text'
                 value={this.state.name}
                 placeholder='Name'

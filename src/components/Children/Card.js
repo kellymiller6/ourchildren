@@ -7,11 +7,11 @@ const Card = ({objInfo}) => {
       { keys.map((oneKey,index) => {
         if(oneKey === 'name'){
           return(
-            <h3 key={index}>{objInfo[oneKey]}</h3>
+            <h3 key={index} className='card-name'>{objInfo[oneKey]}</h3>
           )
         }
         return(
-          <p key={index}>{objInfo[oneKey]}</p>
+          <p key={index} className='card-keys'>{objInfo[oneKey]}</p>
         )
       })}
     </div>

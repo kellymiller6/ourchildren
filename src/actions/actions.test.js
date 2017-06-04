@@ -1,6 +1,8 @@
 import configureMockStore from 'redux-mock-store';
 import * as actions from './index.js';
-// import mockData from '../components/MovieGrid/mockFavorites.json';
+import mockData from '../components/Children/mockData.json';
+var CryptoJS = require("crypto-js")
+
 
 describe('actions', () => {
   const store = configureMockStore()();
@@ -52,5 +54,4 @@ describe('actions', () => {
 
     expect(action).toEqual(expectedAction)
   })
-
 })

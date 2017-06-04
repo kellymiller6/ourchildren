@@ -16,7 +16,7 @@ export default class AddWorker extends Component {
       <div className='worker'>
         <form className='add-worker'>
           <input
-                className='add-input'
+                className='add-input name'
                 type='text'
                 value={this.state.name}
                 placeholder='Name'
