@@ -7,7 +7,7 @@ class ParentProfile extends Component {
   render(){
     return (
       <div className="ParentProfile">
-        <h3>Parent Foster Specialist</h3>
+        <h4>Parent Workers</h4>
         {
           (this.props.workers).map((worker, index) =>{
             return (
@@ -15,8 +15,9 @@ class ParentProfile extends Component {
             );
           })
         }
+        <Link to="/AddWorker"><button className="add-btn btn">Add Worker</button></Link>
 
-        <h3>Approved Sitters</h3>
+        <h4>Approved Sitters</h4>
         {
           (this.props.sitters).map((sitter, index) =>{
             return (
@@ -25,8 +26,7 @@ class ParentProfile extends Component {
           })
         }
 
-        <Link to="/AddWorker"><button className="btn">Add Worker</button></Link>
-        <Link to="/AddSitter"><button className="btn">Add Sitter</button></Link>
+        <Link to="/AddSitter"><button className="add-btn btn">Add Sitter</button></Link>
       </div>
     );
   }

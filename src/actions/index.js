@@ -50,7 +50,6 @@ export const fetchData = (location, actionCreator) => {
     }
     ref.child('users/'+uid+'/'+location).on('value', snapshot => {
       const snaps = snapshot.val()
-      console.log(snaps);
       if(!snaps){
         return
       }

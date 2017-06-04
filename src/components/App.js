@@ -28,6 +28,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>Our Children</h1>
         <Navbar loggedin={this.state.loggedin} determinedlog={signout} />
         {this.props.children}
       </div>

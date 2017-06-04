@@ -5,16 +5,16 @@ export default class AddWorker extends Component {
     super()
     this.state = {
       name: '',
-      workerNumber:'',
-      workerEmail:'',
-      workerType:''
+      Phone:'',
+      Email:'',
+      Type:''
     }
   }
 
   render(){
     return(
       <div className='worker'>
-        <form className='add-worker'>
+        <form className='add-info'>
           <input
                 className='add-input name'
                 type='text'
@@ -30,7 +30,7 @@ export default class AddWorker extends Component {
                   value={this.state.workerNumber}
                   placeholder='Number'
                   onChange={(e) => this.setState({
-                    workerNumber: e.target.value
+                    Phone: e.target.value
                   })}
           />
           <input
@@ -39,22 +39,22 @@ export default class AddWorker extends Component {
                   value={this.state.workerEmail}
                   placeholder='email'
                   onChange={(e) => this.setState({
-                    workerEmail: e.target.value
+                    Email: e.target.value
                   })}
           />
           <input
                   className='add-input'
                   type='text'
                   value={this.state.workerType}
-                  placeholder='Foster or Adoption Worker?'
+                  placeholder='Foster or Adoption?'
                   onChange={(e) => this.setState({
-                    workerType: e.target.value
+                    Type: e.target.value
                   })}
           />
           <button type='submit'
-              className="form submit"
+              className="form submit add-btn"
               onClick={()=>this.props.addWorker(this.state)}>
-              Add Foster Care Specialist
+              Add Worker
             </button>
         </form>
       </div>

@@ -3,7 +3,7 @@ import React from 'react';
 const Card = ({objInfo}) => {
   const keys = Object.keys(objInfo)
   return(
-    <div>
+    <div className='card'>
       { keys.map((oneKey,index) => {
         if(oneKey === 'name'){
           return(
@@ -11,7 +11,7 @@ const Card = ({objInfo}) => {
           )
         }
         return(
-          <p key={index} className='card-keys'>{objInfo[oneKey]}</p>
+          <p key={index} className='card-keys'>{oneKey}: {objInfo[oneKey]}</p>
         )
       })}
     </div>

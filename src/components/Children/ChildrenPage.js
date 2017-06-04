@@ -6,14 +6,14 @@ class ChildrenPage extends Component {
   render(){
     return (
         <div className="ChildrenPage">
-          <h4>All children will go here</h4>
+          <h4>Children</h4>
           {
             this.props.children.map((child, index) => {
             return(
                 <Card key={index} objInfo={child}/>
             )
           })}
-          <Link to="/addchild"><button className="btn">Add Child</button></Link>
+          <Link to="/addchild"><button className="add-btn btn">Add Child</button></Link>
         </div>
       );
   }

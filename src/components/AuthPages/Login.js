@@ -6,11 +6,11 @@ import { handleGoogle } from '../../firebase/Firebase';
 const Login = () => {
   return (
     <div className="Login">
-      <h1>Login Screen</h1>
-        <button className="btn " onClick={handleGoogle}>
+      <h4>Login</h4>
+        <button className="add-btn" onClick={handleGoogle}>
           Sign in with Google
         </button>
-        <p><Link to="/signup"> Sign Up</Link></p>
+        <p><Link className='link' to="/signup"> Create an Account</Link></p>
     </div>
   );
 }

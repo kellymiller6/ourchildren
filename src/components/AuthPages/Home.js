@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
-// import quotes from '../../quotes/quotes.json'
+import React from 'react';
+import { quotes } from '../../quotes/quotes.js'
 
-//randomized quotes will appear on this page along with links to parent profile/children/calendar
-class Home extends Component {
-  render() {
-    return (
-      <div className="Home">
-        <h1>Our Children</h1>
-        <p></p>
-      </div>
-    );
-  }
-}
+const Home = () => {
+  const display = quotes[Math.floor(Math.random() * quotes.length)];
+  console.log(display);
+  return (
+   <div className='quotes'>
+    <h3>{display.Quote}</h3>
+    <h5>{display.Author}</h5>
+   </div>
+  );
+};
 
 export default Home;

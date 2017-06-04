@@ -5,15 +5,15 @@ export default class AddSitter extends Component {
     super()
     this.state = {
       name: '',
-      sitterNumber:'',
-      sitterEmail:''
+      Phone:'',
+      Email:''
     }
   }
 
   render(){
     return(
       <div className='sitter'>
-        <form className='add-sitter'>
+        <form className='add-info'>
           <h4> Approved Sitter </h4>
           <input
                 className='add-input name'
@@ -30,7 +30,7 @@ export default class AddSitter extends Component {
                   value={this.state.sitterNumber}
                   placeholder='Number'
                   onChange={(e) => this.setState({
-                    sitterNumber: e.target.value
+                    Phone: e.target.value
                   })}
           />
           <input
@@ -39,11 +39,11 @@ export default class AddSitter extends Component {
                   value={this.state.sitterEmail}
                   placeholder='email'
                   onChange={(e) => this.setState({
-                    sitterEmail: e.target.value
+                    Email: e.target.value
                   })}
           />
           <button type='submit'
-              className="form submit"
+              className="form submit add-btn"
               onClick={()=>this.props.addSitter(this.state)}>
               Add Sitter
             </button>

@@ -36,9 +36,9 @@ describe('AddChild component', () => {
   it('should begin with default state', () => {
     expect(Component.node.state).toEqual({
       name: '',
-      childBirthday:'',
-      childArrivalDate:'',
-      childInsurance:'',
+      Birthday:'',
+      Arrival:'',
+      Insurance:'',
     });
   });
 
@@ -50,9 +50,9 @@ describe('AddChild component', () => {
 
     expect(Component.node.state).toEqual({
       name: 'kelly',
-      childBirthday:'',
-      childArrivalDate:'',
-      childInsurance:'',
+      Birthday:'',
+      Arrival:'',
+      Insurance:'',
     });
   });
 });
