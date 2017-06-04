@@ -39,6 +39,9 @@ describe('AddChild component', () => {
       Birthday:'',
       Arrival:'',
       Insurance:'',
+      Worker_Name: '',
+      Worker_Number: '',
+      Worker_Email: ''
     });
   });
 
@@ -53,6 +56,9 @@ describe('AddChild component', () => {
       Birthday:'',
       Arrival:'',
       Insurance:'',
+      Worker_Name: '',
+      Worker_Number: '',
+      Worker_Email: ''
     });
   });
 });

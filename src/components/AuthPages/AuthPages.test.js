@@ -12,6 +12,11 @@ describe('Home', () => {
     const wrapper = shallow(<Home  />);
     expect(wrapper.find('.Home').length).toBe(1)
   });
+
+  it('should render a quote', () => {
+    const wrapper = shallow(<Home  />);
+    expect(wrapper.find('h3').length).toBe(1)
+  });
 });
 
 describe('Login', () => {

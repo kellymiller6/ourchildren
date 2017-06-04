@@ -12,7 +12,7 @@ class App extends Component {
       };
   }
 
-  componentDidMount(){
+  componentWillMount(){
     firebaseApp.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({loggedin: true});

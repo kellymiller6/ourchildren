@@ -46,9 +46,8 @@ describe('AddSitter component', () => {
     nameInput.simulate('change', {target: {value: 'kelly'}});
 
 
-
     expect(Component.node.state).toEqual({
-      name: '',
+      name: 'kelly',
       Phone:'',
       Email:''
     });

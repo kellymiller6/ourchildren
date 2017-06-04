@@ -1,7 +1,7 @@
 const childReducer = (state=[], action) => {
   switch(action.type){
     case 'RECEIVE_CHILDREN':
-      return [...state, ...action.children]
+      return [...action.children]
     default:
     return state
   }

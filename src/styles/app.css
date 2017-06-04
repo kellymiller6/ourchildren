@@ -18,6 +18,7 @@ body{
   color: #002746;
   font-family: 'Open Sans', sans-serif;
   border: 1px solid #185253;
+  border-radius: 25px;
   min-width: 66%;
   max-width: 90%;
 }
