@@ -15,29 +15,30 @@ export default class AddSitter extends Component {
       <div className='sitter'>
         <form className='add-info'>
           <h4> Approved Sitter </h4>
+          <label>Name:</label>
           <input
                 className='add-input name'
                 type='text'
                 value={this.state.name}
-                placeholder='Name'
                 onChange={(e) => this.setState({
                   name: e.target.value
                 })}
           />
+          <label>Phone Number:</label>
           <input
                   className='add-input'
-                  type='text'
+                  type='tel'
                   value={this.state.sitterNumber}
-                  placeholder='Number'
+                  placeholder='xxx-xxx-xxxx'
                   onChange={(e) => this.setState({
                     Phone: e.target.value
                   })}
           />
+          <label>Email:</label>
           <input
                   className='add-input'
-                  type='text'
+                  type='email'
                   value={this.state.sitterEmail}
-                  placeholder='email'
                   onChange={(e) => this.setState({
                     Email: e.target.value
                   })}

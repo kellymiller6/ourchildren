@@ -55,6 +55,10 @@ body{
   align-content: center;
 }
 
+.add-info{
+  margin-top: 20px;
+}
+
 h1 {
   font-size: 3em;
   color: #185253;
@@ -67,11 +71,18 @@ h4{
   font-family: 'Nunito', sans-serif;
 }
 
+label{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  color: #185253;
+}
+
 input{
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
-  margin: 20px;
+  margin: 2px 20px 20px 20px;
   height: 30px;
+  width: 275px;
 }
 
 .nav-btn {
