@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { addObject } from '../../helpers/helper'
 
 export default class AddChild extends Component {
   constructor (){
@@ -79,7 +79,7 @@ export default class AddChild extends Component {
 
           <button type='submit'
               className="form submit add-btn"
-              onClick={()=>this.props.addChild(this.state)}>
+              onClick={()=>addObject(this.state, 'children')}>
               Add Child
             </button>
         </form>

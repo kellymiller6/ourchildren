@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { addObject } from '../../helpers/helper'
 
 export default class AddWorker extends Component {
   constructor (){
@@ -53,9 +54,10 @@ export default class AddWorker extends Component {
                     Type: e.target.value
                   })}
           />
+        
           <button type='submit'
               className="form submit add-btn"
-              onClick={()=>this.props.addWorker(this.state)}>
+              onClick={()=>addObject(this.state, 'workers')}>
               Add Worker
             </button>
         </form>
