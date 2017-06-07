@@ -11,8 +11,8 @@ import AppContainer from './containers/AppContainer';
 import Home from './components/AuthPages/Home';
 import Login from './components/AuthPages/Login';
 import Signup from './components/AuthPages/Signup';
-import AddWorkerContainer from './containers/AddWorkerContainer';
-import AddSitterContainer from './containers/AddSitterContainer';
+import AddWorker from './components/Parent/AddWorker';
+import AddSitter from './components/Parent/AddSitter';
 import ParentProfileContainer from './containers/ParentProfileContainer';
 import AddChildContainer from './containers/AddChildContainer';
 import ChildrenPageContainer from './containers/ChildrenPageContainer';
@@ -33,8 +33,8 @@ render((
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/parentprofile" component={ParentProfileContainer} />
-        <Route path="/addworker" component={AddWorkerContainer} />
-        <Route path="/addsitter" component={AddSitterContainer} />
+        <Route path="/addworker" component={AddWorker} />
+        <Route path="/addsitter" component={AddSitter} />
         <Route path="/children" component={ChildrenPageContainer} />
         <Route path="/addchild" component={AddChildContainer} />
       </Route>

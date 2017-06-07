@@ -7,7 +7,7 @@ class ParentProfile extends Component {
   render(){
     return (
       <div className="ParentProfile">
-        <h4>Parent Workers</h4>
+        <h4>Your Foster Care and Adoption</h4>
         {
           (this.props.workers).map((worker, index) =>{
             return (

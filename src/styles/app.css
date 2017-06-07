@@ -25,9 +25,23 @@ body{
 
 .quotes {
   width: 75%;
+  margin-top: 5px;
+  border: 1px solid #185253;
+  border-radius: 25px;
   color: #002746;
-  font-size: 2em;
+  font-size: 1em;
   font-family: 'Gloria Hallelujah', cursive;
+}
+
+.Home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 1% 10%;
+  color: #002746;
+  font-family: 'Nunito', sans-serif;
 }
 
 .ParentProfile,
@@ -39,6 +53,10 @@ body{
   justify-content: center;
   align-items: center;
   align-content: center;
+}
+
+.add-info{
+  margin-top: 20px;
 }
 
 h1 {
@@ -53,11 +71,17 @@ h4{
   font-family: 'Nunito', sans-serif;
 }
 
+label{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  color: #185253;
+ }
 input{
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
-  margin: 20px;
+  margin: 2px 20px 20px 20px;
   height: 30px;
+  width: 275px;
 }
 
 .nav-btn {
@@ -91,3 +115,16 @@ input{
   font-size: 18px;
   color: #185253;
 }
+
+.log-btn{
+  position: absolute;
+  float: right;
+  border: none;
+  right: 10%;
+  top: 3%;
+  border: 1px solid #185253;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  background-color: #bfd8bd;
+  color: #185253;
+ }

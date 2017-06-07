@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { addObject } from '../../helpers/helper.js';
 
 export default class AddWorker extends Component {
   constructor (){
@@ -15,33 +16,35 @@ export default class AddWorker extends Component {
     return(
       <div className='worker'>
         <form className='add-info'>
+          <label>Name:</label>
           <input
                 className='add-input name'
                 type='text'
                 value={this.state.name}
-                placeholder='Name'
                 onChange={(e) => this.setState({
                   name: e.target.value
                 })}
           />
+          <label>Phone Number:</label>
           <input
                   className='add-input'
-                  type='text'
+                  type='tel'
                   value={this.state.workerNumber}
-                  placeholder='Number'
+                  placeholder='xxx-xxx-xxxx'
                   onChange={(e) => this.setState({
                     Phone: e.target.value
                   })}
           />
+          <label>Email:</label>
           <input
                   className='add-input'
-                  type='text'
+                  type='email'
                   value={this.state.workerEmail}
-                  placeholder='email'
                   onChange={(e) => this.setState({
                     Email: e.target.value
                   })}
           />
+          <label>Type of Worker:</label>
           <input
                   className='add-input'
                   type='text'
@@ -53,7 +56,7 @@ export default class AddWorker extends Component {
           />
           <button type='submit'
               className="form submit add-btn"
-              onClick={()=>this.props.addWorker(this.state)}>
+              onClick={()=>addObject(this.state, 'workers')}>
               Add Worker
             </button>
         </form>
