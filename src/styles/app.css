@@ -23,6 +23,17 @@ body{
   max-width: 90%;
 }
 
+.Home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 1% 10%;
+  color: #002746;
+  font-family: 'Nunito', sans-serif;
+}
+
 .quotes {
   width: 75%;
   margin-top: 5px;
@@ -75,7 +86,9 @@ label{
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   color: #185253;
- }
+}
+
+
 input{
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
@@ -127,4 +140,5 @@ input{
   font-size: 12px;
   background-color: #bfd8bd;
   color: #185253;
- }
+}
+

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { addObject } from '../../helpers/helper.js';
+import { addObject } from '../../helpers/helper'
+
 
 export default class AddSitter extends Component {
   constructor (){
@@ -46,7 +47,7 @@ export default class AddSitter extends Component {
           />
           <button type='submit'
               className="form submit add-btn"
-              onClick={()=>addObject(this.state, 'sitters')}>
+              onClick={()=> addObject(this.state, 'sitters')}>
               Add Sitter
             </button>
         </form>

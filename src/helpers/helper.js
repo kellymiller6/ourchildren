@@ -15,6 +15,6 @@ export const addObject = (object, objType) => {
   if(objType === 'children'){
     browserHistory.push('/children')
   } else {
-   browserHistory.push('/parentprofile')
+    browserHistory.push('/parentprofile')
   }
 }

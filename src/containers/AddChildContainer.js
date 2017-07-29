@@ -1,5 +1,4 @@
 import {connect} from 'react-redux';
-
 import AddChild from '../components/Children/AddChild'
 
 const mapStateToProps = (state) => {
@@ -7,11 +6,5 @@ const mapStateToProps = (state) => {
     children: state.childReducer || []
   }
 }
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     addChild: (child) => dispatch(addObject(child, 'children'))
-//   }
-// }
 
 export default connect(mapStateToProps, null)(AddChild)

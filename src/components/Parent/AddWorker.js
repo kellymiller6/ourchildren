@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { addObject } from '../../helpers/helper.js';
+import { addObject } from '../../helpers/helper'
+
 
 export default class AddWorker extends Component {
   constructor (){
@@ -16,7 +17,8 @@ export default class AddWorker extends Component {
     return(
       <div className='worker'>
         <form className='add-info'>
-          <label>Name:</label>
+        <label>Name:</label>
+
           <input
                 className='add-input name'
                 type='text'
@@ -44,7 +46,8 @@ export default class AddWorker extends Component {
                     Email: e.target.value
                   })}
           />
-          <label>Type of Worker:</label>
+          <label>Worker Type:</label>
+
           <input
                   className='add-input'
                   type='text'
@@ -54,6 +57,7 @@ export default class AddWorker extends Component {
                     Type: e.target.value
                   })}
           />
+        
           <button type='submit'
               className="form submit add-btn"
               onClick={()=>addObject(this.state, 'workers')}>
