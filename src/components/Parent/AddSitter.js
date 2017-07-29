@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { addObject } from '../../helpers/helper'
 
+
 export default class AddSitter extends Component {
   constructor (){
     super()

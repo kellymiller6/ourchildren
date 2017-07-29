@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { addObject } from '../../helpers/helper'
+
+import { addObject } from '../../helpers/helper.js';
+
 
 export default class AddChild extends Component {
   constructor (){
@@ -43,10 +45,12 @@ export default class AddChild extends Component {
                     Arrival: e.target.value
                   })}
           />
+
           <label>Insurance:</label>
           <input className='add-input'
                   type='text'
                   value={this.state.Insurance}
+
                   onChange={(e) => this.setState({
                     Insurance: e.target.value
                   })}
@@ -59,7 +63,9 @@ export default class AddChild extends Component {
                     Worker_Name: e.target.value
                   })}
           />
+
           <label>Worker Number</label>
+
           <input className='add-input'
                   type='tel'
                   value={this.state.Worker_Number}
@@ -72,6 +78,7 @@ export default class AddChild extends Component {
           <input className='add-input'
                   type='email'
                   value={this.state.Worker_Email}
+
                   onChange={(e) => this.setState({
                     Worker_Email: e.target.value
                   })}

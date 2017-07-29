@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { addObject } from '../../helpers/helper'
 
+
 export default class AddWorker extends Component {
   constructor (){
     super()
@@ -17,6 +18,7 @@ export default class AddWorker extends Component {
       <div className='worker'>
         <form className='add-info'>
         <label>Name:</label>
+
           <input
                 className='add-input name'
                 type='text'
@@ -45,6 +47,7 @@ export default class AddWorker extends Component {
                   })}
           />
           <label>Worker Type:</label>
+
           <input
                   className='add-input'
                   type='text'

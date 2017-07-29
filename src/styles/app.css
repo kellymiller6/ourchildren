@@ -44,6 +44,17 @@ body{
   font-family: 'Gloria Hallelujah', cursive;
 }
 
+.Home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 1% 10%;
+  color: #002746;
+  font-family: 'Nunito', sans-serif;
+}
+
 .ParentProfile,
 .ChildrenPage,
 .add-info {
@@ -76,6 +87,7 @@ label{
   font-size: 18px;
   color: #185253;
 }
+
 
 input{
   font-family: 'Open Sans', sans-serif;
@@ -129,3 +141,4 @@ input{
   background-color: #bfd8bd;
   color: #185253;
 }
+
